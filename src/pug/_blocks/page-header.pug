@@ -1,0 +1,22 @@
+mixin page-header
+	div( elem="outer", mod="solid-color", id="page-header__outer" )
+		div( elem="inner" )
+			div( elem="logo" )
+				a( elem="link", href="index.html" )
+					each item in site.data.logo
+						+logo(item)
+
+			a( elem="toggle", mod="close", role="button", id="icon-menu-toggle")
+				span( elem="icon" )
+
+			+nav
+
+	if (isIndex)
+		div( elem="container" )
+			div( elem="group", role="group" )
+				+lead
+				+app
+	else
+			+lead
+
+

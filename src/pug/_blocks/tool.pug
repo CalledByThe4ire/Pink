@@ -1,0 +1,12 @@
+mixin tool(item)
+	div( elem="tool" )
+		if (item.isActive)
+			label( block="range-field", mod=item.title + ", " + item.isState, for=item.title )
+				svg( elem="icon-" + item.title, width=item.width, height=item.height )
+					use( xlink:href="#icon-" + item.title )
+				input( elem="input", mod=item.title, type="range", min="1", max="10", step="1", value=item.value, id=item.title )
+		else
+			label( block="range-field", mod=item.title, for=item.title )
+				svg( elem="icon-" + item.title, width=item.width, height=item.height )
+					use( xlink:href="#icon-" + item.title )
+				input( elem="input", mod=item.title + ", " + item.isState, type="range", min="1", max="10", step="1", value=item.value, id=item.title )

@@ -1,0 +1,15 @@
+mixin feed
+	div( block="photos" )
+		div( elem="container" )
+			+intro
+					p
+						| Взгляните на фотографии, которые выкладывают пользователи!&nbsp;
+					p
+						| Видите, как не&nbsp;хватает ваших?
+
+		div( block="feed" )
+			each item in site.data.feed.mainPhoto
+				+post(item)
+			div( elem="container" )
+				each item in site.data.feed.photos
+					+post(item)

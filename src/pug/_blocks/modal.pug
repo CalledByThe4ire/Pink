@@ -1,0 +1,7 @@
+mixin modal
+	each item in site.data.modal
+		div( block="modal" mod="hidden, " + item.modifier )
+			h2( elem="header" ) !{item.title}
+			div( elem="text" ) !{item.text}
+			div(elem="inner")
+				button( elem="btn", type="btn", value=item.value ) !{item.value}

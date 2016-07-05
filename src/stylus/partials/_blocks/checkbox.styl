@@ -1,0 +1,96 @@
+.checkbox
+	+above($screen-lg)
+		display flex
+		min-width 30%
+		margin-right 3.333333%
+		&:nth-of-type(1)
+			order -6
+		&:nth-of-type(2)
+			order -3
+		&:nth-of-type(3)
+			order -5
+		&:nth-of-type(4)
+			order -2
+		&:nth-of-type(5)
+			order -4
+			margin-right 0
+		&:nth-of-type(6)
+			order 0
+			margin-right 0
+
+	&__input
+		display none
+
+	&__caption
+		position relative
+		display flex
+		padding-top 25px
+		padding-bottom 25px
+		padding-left 90px
+		font-size $font-size
+		line-height 30px
+		color $base-color
+
+		+above($screen-lg)
+			padding-left 60px
+
+		&::before
+			content ""
+			position absolute
+			display block
+			width 40px
+			height 40px
+			background-color #fff
+			border-radius 3px
+			top 50%
+			left 20px
+			transform translateY(-50%)
+			border 2px solid #e5e5e5
+
+			+above($screen-lg)
+				left 0
+
+		&:hover
+			&::before
+				border-color $base-color
+				transition-duration 0.3s
+
+		&:active
+			&::before
+				border-color $secondary-color
+				transition-duration 0s
+
+	&:first-of-type >
+		& ^[0]__caption // .checkbox__caption
+			margin-top 20px
+			+above($screen-md)
+				margin-top 0
+
+			+above($screen-lg)
+				margin-top 0
+
+	&:last-of-type
+		& ^[0]__caption // .checkbox__caption
+			margin-bottom -20px
+
+			+above($screen-lg)
+				margin-bottom 0
+
+	&__input
+		&:checked +
+			& ^[0]__caption // .checkbox__caption
+				&::after
+					content ""
+					position absolute
+					top 40%
+					left 30px
+					display block
+					width 20px
+					height 10px
+					border 2px solid $secondary-color
+					border-top-color transparent
+					border-right-color transparent
+					transform rotate(-45deg)
+
+					+above($screen-lg)
+						left 10px

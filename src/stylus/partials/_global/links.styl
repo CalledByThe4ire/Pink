@@ -1,0 +1,21 @@
+//== Links
+//
+a
+	color $link-color
+	text-decoration none
+	background-color transparent
+
+	&:link
+	&:visited
+		color $link-color
+		text-decoration none
+
+	&:hover
+		color $link-color--hover
+		text-decoration underline
+		transition-duration 0.3s
+
+	&:active
+		color rgba($link-color--hover, 0.3)
+		text-decoration none
+		transition-duration 0s

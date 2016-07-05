@@ -1,0 +1,22 @@
+//== Container
+container()
+	width 100%
+	padding-left $grid-gutter-width
+	padding-right $grid-gutter-width
+	margin 0 auto
+
+	@media (min-width: $screen-md)
+		padding-left ($grid-gutter-width * 2)
+		padding-right ($grid-gutter-width * 2)
+
+
+	@media (min-width: $screen-lg)
+		width $container-lg
+		padding-left 0
+		padding-right 0
+
+
+
+container-fluid()
+	width 100%
+	margin 0 auto

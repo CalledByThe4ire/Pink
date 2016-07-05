@@ -1,0 +1,28 @@
+.textarea
+	min-height 200px
+	padding 20px
+	padding-top 15px
+	border 2px solid #e5e5e5
+	border-radius 3px
+	text-align justify
+	line-height 30px
+
+	&::placeholder
+		color $text-color
+		opacity 1
+
+	&:hover
+		border-color $base-color
+		transition-duration 0.3s
+
+	&:focus
+		border-color $secondary-color
+		transition-duration 0.3s
+
+	+above($screen-md)
+		min-height 195px
+		margin-top 40px
+		margin-bottom 50px
+	+above($screen-lg)
+		min-height 130px
+		margin-bottom 45px

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Главная",
+    "href": "index.html",
+    "isActive": true
+  },
+  {
+    "name": "Фотографии",
+    "href": "photos.html",
+    "isActive": false
+  },
+  {
+    "name": "Конкурс",
+    "href": "form.html",
+    "isActive": false
+  },
+  {
+    "name": "HTML Academy",
+    "href": "https://htmlacademy.ru/",
+    "isActive": false
+  }
+]

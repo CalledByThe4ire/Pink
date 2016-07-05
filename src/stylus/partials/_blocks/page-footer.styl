@@ -1,0 +1,29 @@
+.page-footer
+	display flex // ie11
+	+below($screen-md)
+		display none
+
+	&__container
+		container()
+		display flex
+		justify-content space-between
+		align-items center
+		min-height 127px
+		margin-top auto // ie11
+		margin-bottom auto // ie11
+
+		+above($screen-lg)
+			min-height 197px
+
+
+
+.inner-page
+	.page-footer
+		+below($screen-md - 1)
+			display flex
+			margin-top 35px
+			margin-bottom 35px
+
+			&__container
+				min-height 200px
+				flex-direction column

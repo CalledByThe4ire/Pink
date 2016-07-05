@@ -1,0 +1,20 @@
+extends ../_layouts/base
+
+block variables
+	- isIndex = false
+	- bodyClass="inner-page inner-page--photos";
+
+block title
+	| Pink: Фотографии
+
+block lead
+	| Фотографии
+	br
+	| пользователей
+
+block main-content
+	+feed
+	+photo-editor
+
+
+

@@ -1,0 +1,99 @@
+//- logo
+include ../_blocks/logo
+
+
+//- .page-header
+include ../_blocks/page-header
+
+//- index
+include ../_blocks/nav
+include ../_blocks/app
+include ../_blocks/lead
+
+
+
+//- .main-content
+//- index
+include ../_blocks/intro
+include ../_blocks/features
+include ../_blocks/responses
+include ../_blocks/response
+include ../_blocks/tariffs
+include ../_blocks/tariffs-table
+include ../_blocks/contacts
+
+//- form
+include ../_blocks/feedback-form
+include ../_blocks/textInput
+include ../_blocks/toggleInput
+include ../_blocks/textarea
+include ../_blocks/footnote
+include ../_blocks/modal
+
+//- photos
+include ../_blocks/feed
+include ../_blocks/post
+include ../_blocks/like
+include ../_blocks/photo-editor
+include ../_blocks/editor-form
+include ../_blocks/tool
+
+
+
+//- .page-footer
+include ../_blocks/page-footer
+include ../_blocks/socials
+include ../_blocks/copyright
+
+- var isDevelopment = false;
+- var isIndex = true;
+- var currentPage;
+- var bodyClass;
+
+
+block variables
+
+doctype html
+html( lang="ru" )
+	head
+		meta( charset="utf-8" )
+		meta( name="viewport", content="width=device-width, initial-scale=1.0" )
+		meta(name='theme-color' content='#ffffff')
+
+		link(rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png')
+		link(rel='icon' sizes='16x16' type='image/png' href='favicon-16x16.png')
+		link(rel='icon' sizes='32x32' type='image/png' href='favicon-32x32.png')
+		link(rel='manifest' href='manifest.json')
+		link(rel='mask-icon' href='safari-pinned-tab.svg' color='#5bbad5')
+
+		title
+			block title
+	
+		block styles
+		if (isDevelopment)
+			link( href="css/main.css", rel="stylesheet" )
+		else
+			link( href="css/main.min.css", rel="stylesheet" )
+
+	body(class=bodyClass)
+		include ../../img/svg-sprite.svg
+		header( block="page-header" )
+			+page-header
+
+			block content
+
+		main( block="main-content" )
+			block main-content
+
+		footer( block="page-footer" )
+			+page-footer
+
+		+modal
+
+		block scripts
+		if (isDevelopment)
+			script( src="js/main.js" )
+		else
+			script( src="js/main.min.js" )
+
+		block map
