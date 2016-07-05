@@ -1,0 +1,32 @@
+extends ../_layouts/base
+
+block variables
+	- bodyClass="";
+
+block title
+	| Pink: Главная
+
+block lead
+	| Взгляните на жизнь иначе!
+
+block main-content
+	div( block="promo" )
+		div( elem="container" )
+			+intro
+				p
+					| Устали от серости мегаполиса?
+				p
+					| Нам есть, что вам
+					br
+					| предложить!
+
+			+features
+			+responses
+	+tariffs
+	+contacts
+
+block map
+	script( src="https://maps.googleapis.com/maps/api/js?&language=ru-RU&key=AIzaSyBvUb4KWk4v448gXWLnqDo2Wi4zRGX599A&callback=initMap", async, defer )
+
+
+

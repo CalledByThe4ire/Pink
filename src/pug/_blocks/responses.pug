@@ -1,0 +1,18 @@
+mixin responses
+	div( block="responses-slider" )
+		- for (var i=0; i < site.data.responses.length; i++) {
+			if i == 0
+				input( elem="input", type="radio", name="responses-slider__input", id="responses-slider__slide" + (i + 1), checked)
+			else
+				input( elem="input", type="radio", name="responses-slider__input", id="responses-slider__slide" + (i + 1))
+		- }
+
+		div( elem="mask" )
+			div( elem="slides" )
+				each item in site.data.responses
+					+response(item)
+
+		div( elem="controls" )
+			- for (var i=0; i < site.data.responses.length; i++) {
+				label( elem="control", for="responses-slider__slide" + (i + 1) )
+			- }

@@ -1,0 +1,4 @@
+mixin toggleInput(item, inputType)
+	label( block=inputType )
+		input( elem="input", type=item.inputType, name="osChoice", checked=item.isChecked, disabled=item.isDisabled )
+		span( elem="caption" ) !{item.label}

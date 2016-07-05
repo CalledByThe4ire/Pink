@@ -1,0 +1,17 @@
+.footnote
+	display flex
+	justify-content center
+	font-size 14px
+	line-height 30px
+	text-transform uppercase
+	white-space nowrap
+
+	&__asterisk
+		color $secondary-color
+
+	&__piece
+		display none
+
+	+above($screen-lg)
+		& ^[0]__piece //.footnote__piece
+			display inline

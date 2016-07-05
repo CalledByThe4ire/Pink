@@ -1,0 +1,12 @@
+mixin editor-form
+	form( block="editor-form", action="/hello", method="post" )
+		div( elem="tools", role="group" )
+
+			each item in site.data.tools
+				+tool(item)
+
+		div( elem="controls", role="group" )
+			button( elem="btn",  mod="color: red", type="submit" )
+				| Запостить
+			button( elem="btn",  mod="color: gray", type="reset" )
+				| Отмена

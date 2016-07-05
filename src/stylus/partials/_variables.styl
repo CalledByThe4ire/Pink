@@ -1,0 +1,87 @@
+/* Variables
+	 ========================================================================== */
+//== Colors
+//
+$gray-base ?=				#000
+$gray-darker ?=				lighten($gray-base, 13.5) // #222
+$gray-dark ?=				lighten($gray-base, 20)   // #333
+$gray ?=					lighten($gray-base, 33.5) // #555
+$gray-light ?=				lighten($gray-base, 46.7) // #777
+$gray-lighter ?=			lighten($gray-base, 93.5) // #eee
+
+$brand-primary ?=			darken(#428bca, 6.5) // #337ab7
+$brand-success ?=			#5cb85c
+$brand-info ?=				#5bc0de
+$brand-warning ?=			#f0ad4e
+$brand-danger ?=			#d9534f
+
+
+
+//== Scaffolding
+//
+$text-color ?= 				#283645
+$text-color--muted ?=		$gray
+
+$base-color ?=				$text-color
+$secondary-color ?=			#d22856
+$tertiary-color ?=			#2aab6d
+
+$body-bg ?=					#fff
+
+$link-color ?=				$secondary-color
+$link-color--hover ?=		$base-color
+
+$border-color ?=			$gray-light
+
+
+
+//== Typography
+//
+$font-size ?= 				1.8rem
+$font-size--small ?= 		round($font-size * 0.85, 1)
+
+$font-size--h1 ?=			floor($font-size * 3.6, 1)
+$font-size--h2 ?=			floor($font-size * 3, 1)
+$font-size--h3 ?=			ceil($font-size * 2.4, 1)
+$font-size--h4 ?=			ceil($font-size * 2, 1)
+$font-size--h5 ?=			$font-size
+$font-size--h6 ?=			round($font-size * 0.85, 1)
+
+
+
+$line-height ?= 			ceil($font-size * 1.2, 1)
+
+$font-family--sans-serif ?=	"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family--serif ?=		Georgia, "Times New Roman", Times, serif
+$font-family--monospace ?=	Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+
+$font-family ?=				$font-family--sans-serif
+
+
+
+//== Grid
+//
+$grid-columns ?= 			12
+$grid-gutter-width ?= 		20px
+
+
+
+//== Lost
+//
+@lost flexbox				flex
+@lost gutter				20px
+
+//== Media queries breakpoints
+//
+$screen-md ?=				700px
+$screen-lg ?=				1200px
+
+
+
+//== Container sizes
+//
+$container-tablet ?=		600px + $grid-gutter-width
+$container-md ?= 			$container-tablet
+
+$container-desktop ?=		900px + ($grid-gutter-width * 2)
+$container-lg ?= 			$container-desktop

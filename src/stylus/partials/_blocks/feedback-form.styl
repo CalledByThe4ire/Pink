@@ -1,0 +1,272 @@
+.form
+	+above($screen-md)
+		display flex
+		flex-direction column
+
+	+above($screen-lg)
+		flex-direction row
+		justify-content space-between
+		flex-wrap wrap
+
+	&__container
+		container()
+
+	&__fieldset
+		+above($screen-md)
+			padding-left 60px
+			padding-right 60px
+
+		^[0]__legend // form__legend
+			margin 0
+			padding 0 20px
+			font-size 14px
+			line-height 18px
+			font-weight normal
+			color $secondary-color
+			text-transform uppercase
+			text-align center
+
+			+above($screen-md)
+				display inline-block
+				position absolute
+				width auto
+				top -10px
+				left 50%
+				transform translateX(-50%)
+				background-color #fff
+				white-space nowrap
+
+			+above($screen-lg)
+				padding 0 35px
+
+		&--full-name
+			margin-bottom 45px
+			+above($screen-md)
+				margin-bottom 65px
+				padding-left 0
+				padding-right 0
+				order -20
+
+			+above($screen-lg)
+				display flex
+				justify-content space-between
+				flex-direction column
+				width calc(50% - 35px)
+				& .text-field
+					margin 0
+
+		&--achievements
+		&--contacts
+		&--os-choice
+		&--report
+			position relative
+			margin-bottom 45px
+			padding-top 35px
+			background-color #f2f2f2
+			border-radius 3px
+
+			+below( $screen-md - 1 )
+				margin-left -20px
+				margin-right -20px
+
+			+above($screen-md)
+				margin-top 0
+				margin-bottom 65px
+				border 2px solid #e5e5e5
+				background-color transparent
+
+			+above($screen-lg)
+				display flex
+				flex-wrap wrap
+				padding-left 60px
+				padding-right 60px
+
+		&--achievements
+		&--os-choice
+			+below($screen-md)
+				margin-bottom 25px
+
+			& ^[0]__legend // form__legend
+				+below($screen-md - 1)
+					padding-left 30px
+					padding-right 30px
+
+		&--contacts
+			padding-top 0
+			background-color transparent
+
+			+below( $screen-md - 1 )
+				margin-left 0
+				margin-right 0
+				& ^[0]__legend // form__legend
+					display none
+
+			+above($screen-md)
+				order -10
+				& .text-field
+					flex-direction column
+					align-items initial
+					margin-top 45px
+					margin-bottom 30px
+					&:first-of-type
+					&:last-of-type
+						& ^[3..3]__caption //.text-field__caption
+							align-self flex-start
+					&:last-of-type
+						margin-top 0
+						margin-bottom 25px
+					&__caption
+						order 5
+					&:first-of-type
+					&:last-of-type
+						& ^[3..3]__container //.text-field__container
+							position relative
+							margin-bottom 10px
+							&:before
+								content ""
+								width 20px
+								position absolute
+								top 50%
+								right 20px
+								background-repeat no-repeat
+								transform translateY(-50%)
+								z-index 5
+							&:after
+								content ""
+								position absolute
+								top 0
+								right 0
+								width 60px
+								height 100%
+								background-color #e5e5e5
+					&:first-of-type
+						& ^[3..3]__container //.text-field__container
+							&:before
+								height 20px
+								background-image embedurl("../img/inline/icon-phone.svg", "utf8")
+								cursor pointer
+					&:last-of-type
+						& ^[3..3]__container //.text-field__container
+							&:before
+								height 15px
+								background-image embedurl("../img/inline/icon-mail.svg", "utf8")
+								cursor pointer
+
+			+above($screen-lg)
+				display flex
+				justify-content space-between
+				width 100%
+				padding-top 40px
+				padding-bottom 15px
+				order -10
+				& .text-field
+					width calc(50% - 35px)
+					margin 0
+
+					&:first-of-type
+					&:last-of-type
+						margin-bottom 0
+
+						& ^[3..3]__container //.text-field__container
+							&:before
+								right 5%
+
+					&:first-of-type
+						margin-right auto
+					&:last-of-type
+						margin-left auto
+
+					&__caption
+						padding-left 25px
+						order 1
+
+		&--achievements
+			padding-bottom 60px
+
+			+above($screen-md)
+				order -5
+
+			+above($screen-lg)
+				padding-bottom 35px
+				order -5
+
+		&--os-choice
+			padding-bottom 45px
+
+			+above($screen-md)
+				padding-bottom 55px
+				order -15
+
+			+above($screen-lg)
+				width calc(50% - 35px)
+				padding-bottom 30px
+				order -15
+
+		&--report
+			margin-top 0
+			background-color transparent
+
+			+below($screen-md - 1)
+				margin-left 0
+				margin-right 0
+
+				& ^[0]__legend // form__legend
+					position relative
+					margin-bottom 15px
+
+			+above($screen-md)
+				padding-top 0
+
+			+above($screen-lg)
+				width 100%
+
+		&--submit
+			display block
+			margin-top 0
+			margin-bottom 55px
+			width 100%
+
+			+above($screen-md)
+				display flex
+				justify-content space-between
+				padding-left 0
+				padding-right 0
+				margin-bottom 35px
+				order 10
+
+			+above($screen-lg)
+				padding-left 0
+				padding-right 0
+				margin 0
+
+		^[0]__submit // form__submit
+			btn(20px, 40px, 0)
+			min-width 100%
+			margin-bottom 20px
+			background-color $tertiary-color
+			border-radius 3px
+			font-weight 700
+			text-transform uppercase
+			color #fff
+
+			&:hover
+				background-color #1c9b5e
+				transition-property background-color
+				transition-duration 0.3s
+
+			&:active
+				color rgba(#fff, 0.7)
+				transition-property color
+				transition-duration 0s
+
+			&:disabled
+				background-color #e5e5e5
+
+			+above($screen-md)
+				min-width calc(50% - 10px)
+
+			+above($screen-lg)
+				min-width calc(33.333333% - 10px)
+				margin-bottom 0
+
+

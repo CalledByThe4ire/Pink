@@ -1,0 +1,97 @@
+.navbar
+	display none
+
+	+below($screen-lg - 1)
+		position absolute
+		width 100%
+		top 100%
+		right 0
+		background-color #283645
+		font-weight 700
+		text-transform uppercase
+
+	&--visible
+		display block
+
+	+above($screen-lg)
+		display flex
+
+	&__nav
+		margin 0
+		padding 0
+		color #fff
+		text-align center
+		list-style none
+
+		+above($screen-lg)
+			display flex
+			flex-wrap nowrap
+			position static
+			background-color transparent
+
+	&__item
+		box-shadow inset 0 1px rgba(255, 255, 255, 0.3)
+		border-top 1px solid #000
+		cursor pointer
+
+		+above($screen-lg)
+			margin-right 40px
+			border-bottom none
+			font-weight 400
+			line-height 110px
+			text-transform none
+			box-shadow none
+
+			&:last-child
+				margin-right 0
+
+	&__link
+		display block
+		padding 25px 0
+		color #fff
+		text-decoration none
+		transition-duration 0.3s
+
+		&:link
+			color #fff
+			text-decoration none
+
+		&:visited
+			color #fff
+			text-decoration none
+
+		&:hover
+			color $link-color
+			text-decoration none
+
+		&:active
+			color rgba($link-color, 0.3)
+			transition-duration 0s
+
+		+above($screen-lg)
+			padding 0 25px
+
+			& > span
+				position relative
+
+			&:hover
+				& span:before
+					content ""
+					position absolute
+					bottom -10px
+					left 0
+					right 0
+					height 2px
+					background-color #fff
+
+			&:active
+				opacity 0.3
+				transition-duration 0s
+
+				& span:before
+					background-color transparent
+
+		+above($screen-lg)
+			&:hover
+				color #fff
+				text-decoration none
