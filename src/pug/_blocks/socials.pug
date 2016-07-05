@@ -1,7 +1,0 @@
-mixin socials
-	ul( block="socials" )
-		each item in site.data.socials
-			li( elem="item" )
-				a( elem="link", target="_blank", href=item.link )
-					svg( class="icon-" + item.title, width="50", height="50" )
-						use( xlink:href="#icon-" + item.title )

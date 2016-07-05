@@ -1,8 +1,0 @@
-mixin like(item)
-	div( block="like" )
-		svg( class="icon-heart", width="14", height="13" )
-			use( xlink:href="#icon-heart" )
-		div( elem="counter" )
-			span( elem="text" )
-				| Нравится:&nbsp;
-			span( elem="amount" ) !{item.likes}
